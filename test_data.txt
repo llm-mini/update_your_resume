@@ -1,0 +1,75 @@
+# ============================================================
+# TEST DATA FILE — Baseline case matching Anil's reference PDF
+# Run: python generate.py --input test_data.txt
+# Output: export/test_baseline/resume.md + resume.pdf
+# ============================================================
+
+[personal]
+name: Anil Yadav
+email: anilyadv2014@gmail.com
+phone: +91-9616185968
+linkedin_username: anilkumarprofile
+linkedin_url: https://linkedin.com/in/anilkumarprofile
+github_username: The-Anil
+github_url: https://github.com/The-Anil
+location: India
+
+[education]
+degree: Btech (Hons.) – CSE
+college: Indian Institute of Information Technology Kottayam
+years: 2015 – 2019
+cgpa: 9.41/10
+
+[honors]
+- Insta Orion Award, Qualcomm (2022)
+- Ace Award, Ericsson (Jan 2021)
+- Power Award, Ericsson (Oct 2020)
+- Silver Medalist, IIIT Kottayam (Batch 2015)
+- Rank 1, Interviewbit Contest (July 2018)
+
+[certifications]
+- Learning Docker – LinkedIn Learning
+- Learning Git and GitHub – LinkedIn Learning
+- Designing RESTful APIs – LinkedIn Learning
+- Machine Learning by Andrew Ng – Coursera
+- Introduction to Data Science – Cognitive Class
+- Data Science Hands-On with Open Source Tools – Cognitive Class
+
+[meta]
+company: Baseline Test
+resume_name: test_baseline
+
+[skills]
+LangChain, LangGraph, LangSmith, Sentence Transformers, FAISS, Cosine Similarity, LLMs (Qwen2.5-14b, LLaMA), Prompt Engineering, Chain-of-Thought Reasoning, Semantic Search, Vector Embeddings
+Pandas, Pyspark, Image Processing, Selenium
+Django, RESTful API, Flask, RabbitMQ, Celery, Docker, Hadoop
+Python, SQL, MongoDB
+
+[experience]
+Senior Engineer at Qualcomm, Nov 2021 - Present, Hyderabad, India
+- GlitchHunt – Issue Categorization using Qgenie-SDK: Used Qwen2.5-14b-1m LLM with LangChain SDK and FAISS to semantically match error logs with historical JIRA/CRs, reducing analysis time by 15+ minutes per job. Applied chain-of-thought prompting to prevent hallucinated classifications across TOOL/SW/INFRA categories by avoiding mismatches with unrelated issues. Designed a fallback mechanism to handle unknown issues by embedding and indexing them for future recall, with expert-incentivized labeling for accurate categorization.
+- Spotlight – Intelligent Duplicate CR Detection: Implemented Sentence Transformers with cosine similarity to embed and retrieve semantically similar historical JIRA/CRs, avoiding duplicate reporting and streamlining ticket triage.
+- E2E Synchronization Framework: Designed and implemented a containerized framework (FlaskAPI and MongoDB) for end-to-end test case scenarios, enabling seamless synchronization and automation.
+- APTCI Dashboard Deployment: Successfully deployed new Docker images with updated features ensuring efficient and scalable deployment.
+- AdbUtility: Developed a Flask API to retrieve AdbId from Serial No. for MDM/XR/LA targets, enabling multi-device support with minimal effort.
+- Automation POC: Automated QLI/XR/MBB functionality testing, achieving 100% automation hence eliminating manual work.
+
+Software Developer at Ericsson India Global Services, Sept 2019 - Oct 2021, Noida, India
+- Data Insights: Developed automation scripts with pandas and matplotlib to drive business decisions.
+- Data Preprocessing: Created an XML parser with Multiprocessing to handle 160 GB/hour datasets. Explored Vaex, Parquet, Avro, and Dask for optimal results.
+- Rule-Based Automation Engine: Designed and deployed a scalable framework with Design Patterns, MongoDB, and Docker.
+- Infrastructure Setup: Configured tools like Zookeeper, Prometheus, Grafana, Rclone, and Nifi Cluster with Ansible for efficient tooling and monitoring.
+- Big Data Pipeline: Built a high-throughput data-pipeline with Apache Nifi, Hadoop, and Pyspark to handle 300 GB of data every 15 minutes.
+- API Optimization: Reduced costs by 30% with data flow optimization and BloomFilters for efficient Google Map API usage.
+
+Software Engineer Trainee at GadgEon Smart Systems Pvt Ltd., Jun 2019 - Aug 2019, Kochi, India
+- Data Analyst: Analyzed large-scale IoT data from Medical and Industrial Automation fields, driving business decisions and product development with data-driven insights.
+
+[projects]
+InstaPageManager: Fine-tuned LLaMA on Reddit comments to auto-generate memes, captions, and hashtags for effortless Instagram content. Used Hugging Face, PyTorch, PRAW, and custom preprocessing for data collection and model training.
+
+Scene Description for Visually Impaired People: Using object detection, similarity to find distance and google text to speech to describe scene in front of person in audio format to make them visualize. Used Python, OpenCV, Image Processing.
+
+Cryptocurrency Live Twitter Sentiments: Analyzing twitter feed and plotting sentiments against time. Used Dash for better plotting and Realtime Visualization in WebApp. Python, Dash, NLP.
+
+[jd]

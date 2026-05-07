@@ -1,0 +1,21 @@
+# TODO
+
+## Bugs
+
+[ ] PDF generation fails on Windows locally
+    - WeasyPrint requires GTK/Pango native DLLs (libgobject-2.0-0.dll etc.)
+    - Error: "OSError: cannot load library 'C:\Program Files\Tesseract-OCR\libgobject-2.0-0.dll': error 0x7e"
+    - Workaround: use --skip-pdf flag for local testing
+    - PDF generation works correctly on Ubuntu (GitHub Actions)
+    - Fix options:
+        a) Install GTK for Windows: https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer
+        b) Switch to wkhtmltopdf + pdfkit for cross-platform support (requires wkhtmltopdf binary)
+        c) Keep WeasyPrint (CI-only PDF), accept --skip-pdf as the Windows workflow
+
+## Improvements
+
+[ ] Verify PDF output on GitHub Actions — trigger workflow once and check export/ PDF visually
+[ ] Add .env.example file so new users know what env vars are needed
+[ ] Test JD matching — paste a real JD in [jd] section, verify skill reorder in output
+[ ] Consider caching LLM response (save structured JSON) to avoid re-calling LLM on re-runs with same input
+[ ] Add validation: warn if required fields (name, email) are missing from parsed data before calling LLM

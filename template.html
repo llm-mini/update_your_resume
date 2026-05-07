@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ data.personal.name }} – Resume</title>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1 class="name">{{ data.personal.name }}</h1>
+  <div class="contact-row">
+    <span class="contact-item">&#9993; <a href="mailto:{{ data.personal.email }}">{{ data.personal.email }}</a></span>
+    <span class="contact-sep">|</span>
+    <span class="contact-item">&#9990; {{ data.personal.phone }}</span>
+    <span class="contact-sep">|</span>
+    <span class="contact-item">&#128101; <a href="{{ data.personal.linkedin_url }}">{{ data.personal.linkedin_username }}</a></span>
+    <span class="contact-sep">|</span>
+    <span class="contact-item">&#128279; <a href="{{ data.personal.github_url }}">{{ data.personal.github_username }}</a></span>
+    <span class="contact-sep">|</span>
+    <span class="contact-item">&#128205; {{ data.personal.location }}</span>
+  </div>
+</div>
+
+<!-- TWO-COLUMN BODY -->
+<table class="body-table">
+<tr>
+
+  <!-- LEFT COLUMN: Professional Experience -->
+  <td class="col-left">
+
+    <div class="section">
+      <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+      {% for job in data.experience %}
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">{{ job.title }}</span>
+        </div>
+        <div class="job-company">{{ job.company }}</div>
+        <div class="job-meta">
+          <span class="job-period">{{ job.period }}</span>
+          <span class="job-location">&#128205; {{ job.location }}</span>
+        </div>
+        <ul class="bullets">
+          {% for b in job.bullets %}
+          <li>{% if b.bold %}<strong>{{ b.bold }}</strong>{% if b.text %} {{ b.text }}{% endif %}{% else %}{{ b.text }}{% endif %}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% if not loop.last %}<div class="job-divider"></div>{% endif %}
+      {% endfor %}
+    </div>
+
+  </td>
+
+  <!-- RIGHT COLUMN: Skills, Honors, Projects, Certs, Education -->
+  <td class="col-right">
+
+    <div class="section">
+      <h2 class="section-title">TECHNICAL SKILLS</h2>
+      <ul class="bullets">
+        {% for group in data.skills %}
+        <li>{{ group.skills_list | join(', ') }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">HONORS &amp; AWARDS</h2>
+      <ul class="bullets">
+        {% for h in data.honors %}
+        <li>{{ h }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">PROJECTS</h2>
+      {% for proj in data.projects %}
+      <div class="project">
+        <div class="project-name">{{ proj.name }}</div>
+        <ul class="bullets">
+          {% for b in proj.bullets %}
+          <li>{{ b }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">CERTIFICATIONS</h2>
+      <ul class="bullets">
+        {% for c in data.certifications %}
+        <li>{{ c }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">EDUCATION</h2>
+      <div class="edu-degree">{{ data.education.degree }}</div>
+      <div class="edu-college"><strong>{{ data.education.college }}</strong></div>
+      <div class="edu-meta">
+        <span>{{ data.education.years }}</span>
+        <span>&bull; CGPA: {{ data.education.cgpa }}</span>
+      </div>
+    </div>
+
+  </td>
+
+</tr>
+</table>
+
+</body>
+</html>

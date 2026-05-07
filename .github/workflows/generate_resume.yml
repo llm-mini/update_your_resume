@@ -1,0 +1,63 @@
+name: Generate Resume
+
+on:
+  workflow_dispatch:
+    inputs:
+      input_file:
+        description: "Input data file to use (default: resume_data.txt)"
+        required: false
+        default: "resume_data.txt"
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    env:
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install WeasyPrint system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y \
+            libpango-1.0-0 \
+            libpangoft2-1.0-0 \
+            libpangocairo-1.0-0 \
+            libcairo2 \
+            libgdk-pixbuf2.0-0 \
+            libffi-dev \
+            shared-mime-info
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate resume
+        run: python generate.py --input "${{ github.event.inputs.input_file }}"
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add export/
+          git diff --staged --quiet && echo "No changes to commit" || (
+            git commit -m "chore: generate resume [skip ci]"
+            git push
+          )
+
+      - name: Upload resume as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-output
+          path: export/
+          retention-days: 30
