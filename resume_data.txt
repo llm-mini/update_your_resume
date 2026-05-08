@@ -79,11 +79,22 @@ Software Engineer Trainee at GadgEon Smart Systems Pvt Ltd., Jun 2019 - Aug 2019
 [projects]
 # Write freely — LLM will structure into name + bullet points
 
-InstaPageManager: Fine-tuned LLaMA on Reddit comments to auto-generate memes, captions, and hashtags for effortless Instagram content. Used Hugging Face, PyTorch, PRAW, and custom preprocessing for data collection and model training.
-
-Scene Description for Visually Impaired People: Using object detection, similarity to find distance and google text to speech to describe scene in front of person in audio format to make them visualize. Used Python, OpenCV, Image Processing.
-
-Cryptocurrency Live Twitter Sentiments: Analyzing twitter feed and plotting sentiments against time. Used Dash for better plotting and Realtime Visualization in WebApp. Python, Dash, NLP.
+- Insider trading signal generator - Langgrah + Mathematical modelling
+- Strategy evaluator pipeline - Langgraph
+- Globenewswire Watcher - Langgraph + caching
+- SQL query generator - SFT
+- Bookbot - RAG + chromaDB + LLM Call
+- Dedup JIRA creation - FAISS + LLM Call
+- X content generator + evaluator - multi-agent
+- Technical Indicator Alert to Telegram - Langgraph
+- Telegram group chat summary and query - RAG + LLM calling
+- Insta Page Manager - HITL content creation and scheduled posting
+- YouTube video Summarization - LLM call
+- Earning Calls RAG Q&A - RAG + user query + LLM call
+- HeartScribe - LLM calls
+- DepthEffect - converting 2D images to 2.5D videos - DepthMap based on colors
+- MusicStreaming - music library providing music for multiple clients
+- Open Source Contribution to manage CI/CD pipeline over GitHub for yocto project
 
 [jd]
 # OPTIONAL — paste the full job description here.
